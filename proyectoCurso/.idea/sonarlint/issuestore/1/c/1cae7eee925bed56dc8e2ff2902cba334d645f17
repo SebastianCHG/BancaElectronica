@@ -1,9 +1,0 @@
-
-G	java:S106"+Replace this use of System.out by a logger.(èÜÎÌ8ì€¥ì1
-G	java:S106"+Replace this use of System.out by a logger.(ó•èÄ8í€¥ì1
-F	java:S106"+Replace this use of System.out by a logger.(Äœ†8í€¥ì1
-G	java:S106"+Replace this use of System.out by a logger.(¢Øƒ8í€¥ì1
-G	java:S106"+Replace this use of System.out by a logger.(ëË­ÿ8©Öœ¥ì1
-G	java:S106"+Replace this use of System.out by a logger.(‰Ú«8î¯Î¥ì1
-I
-java:S1144",Remove this unused private "secreto" method.(ÜéûÊ8¶©¿¥ì1
