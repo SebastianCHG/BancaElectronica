@@ -1,6 +1,6 @@
 package negocio;
 
-abstract class Cuenta {
+public abstract class Cuenta {
     private int numeroCuenta;
     private String fechaApertura;
     private double saldo;
