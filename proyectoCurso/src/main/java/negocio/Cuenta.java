@@ -1,22 +1,22 @@
 package negocio;
 
 abstract class Cuenta {
-    private int numero;
+    private int numeroCuenta;
     private String fechaApertura;
     private double saldo;
     private String fechaCancelacion;
 
-    public Cuenta(int numero, double saldo) {
-        this.numero = numero;
-        this.saldo = saldo;
+    public Cuenta(int numeroCuenta, double saldo) {
+        this.setNumeroCuenta(numeroCuenta);
+        this.setSaldo(saldo);
     }
 
-    public int getNumero() {
-        return numero;
+    public int getNumeroCuenta() {
+        return numeroCuenta;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumeroCuenta(int numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
     }
 
     public String getFechaApertura() {
@@ -46,10 +46,10 @@ abstract class Cuenta {
     @Override
     public String toString() {
         return "Cuenta{" +
-                "numero=" + numero +
-                ", fechaApertura='" + fechaApertura + '\'' +
-                ", saldo=" + saldo +
-                ", fechaCancelacion='" + fechaCancelacion + '\'' +
+                "numero=" + getNumeroCuenta() +
+                ", fechaApertura='" + getFechaApertura() + '\'' +
+                ", saldo=" + getSaldo() +
+                ", fechaCancelacion='" + getFechaCancelacion() + '\'' +
                 '}';
     }
 }

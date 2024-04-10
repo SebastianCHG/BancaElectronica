@@ -3,16 +3,14 @@ package negocio;
 public class Domicilio {
 
     private String calle;
-    private String numero;
-    private String colonia;
-    private String estado;
+    private String ciudad;
+    private String departamento;
     private String codigoPostal;
 
-    public Domicilio(String calle, String numero, String colonia, String estado, String codigoPostal) {
+    public Domicilio(String calle, String ciudad, String departamento, String codigoPostal) {
         this.setCalle(calle);
-        this.setNumero(numero);
-        this.setColonia(colonia);
-        this.setEstado(estado);
+        this.setCiudad(ciudad);
+        this.setDepartamento(departamento);
         this.setCodigoPostal(codigoPostal);
     }
 
@@ -24,28 +22,20 @@ public class Domicilio {
         this.calle = calle;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
-    public String getColonia() {
-        return colonia;
+    public String getDepartamento() {
+        return departamento;
     }
 
-    public void setColonia(String colonia) {
-        this.colonia = colonia;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
     }
 
     public String getCodigoPostal() {
@@ -60,9 +50,8 @@ public class Domicilio {
     public String toString() {
         return "Domicilio{" +
                 "calle='" + getCalle() + '\'' +
-                ", numero='" + getNumero() + '\'' +
-                ", colonia='" + getColonia() + '\'' +
-                ", estado='" + getEstado() + '\'' +
+                ", ciudad='" + getCiudad() + '\'' +
+                ", departamento='" + getDepartamento() + '\'' +
                 ", codigoPostal='" + getCodigoPostal() + '\'' +
                 '}';
     }

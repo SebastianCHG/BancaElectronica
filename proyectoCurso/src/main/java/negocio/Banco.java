@@ -2,7 +2,7 @@ package negocio;
 
 import java.util.ArrayList;
 
-public class Banco {
+public class Banco implements ServicioClientes {
 
     private String nombre;
     private Domicilio domicilio;
@@ -10,17 +10,9 @@ public class Banco {
     private String telefono;
     private ArrayList<Cliente> clientes;
 
-    public Banco(String nombre, Domicilio domicilio, String rfc, String telefono) {
+    public Banco(String calle, String ciudad, String departamento, String codigoPostal, String nombre, String rfc, String telefono) {
         this.setNombre(nombre);
-        this.setDomicilio(domicilio);
-        this.setRfc(rfc);
-        this.setTelefono(telefono);
-        this.setClientes(new ArrayList<Cliente>());
-    }
-
-    public Banco(String calle, String numero, String colonia, String estado, String codigoPostal, String nombre, String rfc, String telefono) {
-        this.setNombre(nombre);
-        this.setDomicilio(new Domicilio(calle, numero, colonia, estado, codigoPostal));
+        this.setDomicilio(new Domicilio(calle, ciudad, departamento, codigoPostal));
         this.setRfc(rfc);
         this.setTelefono(telefono);
         this.setClientes(new ArrayList<Cliente>());
@@ -74,5 +66,68 @@ public class Banco {
                 ", rfc='" + getRfc() + '\'' +
                 ", telefono='" + getTelefono() + '\''+
                 '}';
+    }
+
+    @Override
+    public boolean agregarCliente(Cliente cliente) {
+        System.out.println("Cliente " + cliente.getNombre() + " agregado.");
+        clientes.add(cliente);
+        return true;
+    }
+
+    @Override
+    public boolean eliminarCliente(int numero) {
+        Cliente c = consultaCliente(numero);
+        if(c != null) {
+            System.out.println("Cliente eliminado.");
+            clientes.remove(c);
+            return true;
+        }
+        System.out.println("No se encontró cliente a elinmar.");
+        return false;
+    }
+
+    @Override
+    public Cliente consultaCliente(int numero) {
+        for(Cliente c : clientes){
+            if(c.getNumero() == numero){
+                System.out.println("Se encontró el cliente por el número "+ numero + " de nombre " + c.getNombre());
+                return c;
+            }else{
+
+            }
+        }
+        //Pendiente manejo de excepciones
+        System.out.println("No se encontró ningún cliente por el numero " + numero);
+        return null;
+    }
+
+    @Override
+    public ArrayList<Cliente> obtenerClientes() {
+        return clientes;
+    }
+
+    @Override
+    public Cliente buscarClientePorRFC(String rfc) {
+        for(Cliente c : clientes){
+            if(rfc.equalsIgnoreCase(c.getRfc())){
+                System.out.println("Se encontró el cliente por rfc " + rfc + " de nombre " + c.getNombre());
+                return c;
+            }else{
+
+            }
+        }
+        //Pendiente manejo de excepciones
+        System.out.println("No se encontró ningún cliente por el RFC " + rfc);
+        return null;
+    }
+
+    @Override
+    public void listarClientes() {
+        System.out.println("=".repeat(250));
+        for(Cliente c : clientes){
+            System.out.println(c);
+        }
+        System.out.println("=".repeat(250));
     }
 }

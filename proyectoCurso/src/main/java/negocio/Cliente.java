@@ -12,24 +12,14 @@ public class Cliente {
     private ArrayList<Cuenta> cuentas;
     private String fechaNacimiento;
 
-    public Cliente(int numero, String nombre, Domicilio domicilio, String rfc, String telefono, ArrayList<Cuenta> cuentas, String fechaNacimiento) {
+    public Cliente(int numero, String nombre, String rfc, String telefono, String fechaNacimiento,
+                   String calle, String ciudad, String departamento, String codigoPostal) {
         this.setNumero(numero);
         this.setNombre(nombre);
-        this.setDomicilio(domicilio);
+        this.setDomicilio(new Domicilio(calle, ciudad, departamento, codigoPostal));
         this.setRfc(rfc);
         this.setTelefono(telefono);
-        this.setCuentas(cuentas);
-        this.setFechaNacimiento(fechaNacimiento);
-    }
-
-    public Cliente(int numero, String nombre, String rfc, String telefono, ArrayList<Cuenta> cuentas, String fechaNacimiento,
-                   String calle, String numeroDomicilio, String colonia, String estado, String codigoPostal) {
-        this.setNumero(numero);
-        this.setNombre(nombre);
-        this.setDomicilio(new Domicilio(calle, numeroDomicilio, colonia, estado, codigoPostal));
-        this.setRfc(rfc);
-        this.setTelefono(telefono);
-        this.setCuentas(cuentas);
+        this.setCuentas(new ArrayList<>());
         this.setFechaNacimiento(fechaNacimiento);
     }
 
