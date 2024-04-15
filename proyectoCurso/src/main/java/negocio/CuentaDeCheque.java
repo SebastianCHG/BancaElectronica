@@ -18,6 +18,12 @@ public class CuentaDeCheque extends Cuenta {
     }
 
     @Override
+    public boolean retiro(double cantidad) {
+        setSaldo(getSaldo()-cantidad);
+        return true;
+    }
+
+    @Override
     public String toString() {
         return "CuentaDeCheques{" + super.toString() +
                 " costoManejoMensual=" + getCostoManejoMensual() +

@@ -2,7 +2,7 @@ package negocio;
 
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente implements ServicioCuentas{
 
     private int numero;
     private String nombre;
@@ -90,5 +90,10 @@ public class Cliente {
                 ", cuentas=" + getCuentas() +
                 ", fechaNacimiento='" + getFechaNacimiento() + '\'' +
                 '}';
+    }
+
+    @Override
+    public ArrayList<Cuenta> listarCuentas() {
+        return getCuentas();
     }
 }

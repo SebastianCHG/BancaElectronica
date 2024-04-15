@@ -11,6 +11,13 @@ public abstract class Cuenta {
         this.setSaldo(saldo);
     }
 
+    public boolean abono(double cantidad){
+        this.saldo += cantidad;
+        return true;
+    }
+
+    public abstract boolean retiro(double cantidad);
+
     public int getNumeroCuenta() {
         return numeroCuenta;
     }

@@ -22,6 +22,16 @@ public class CuentaDeAhorro extends Cuenta {
     }
 
     @Override
+    public boolean retiro(double cantidad) {
+        if(cantidad <= getSaldo()){
+            setSaldo(getSaldo()-cantidad);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "CuentaAhorros{" + super.toString() +
                 "tasaInteresMensual=" + tasaInteresMensual +
