@@ -1,4 +1,4 @@
-package ejemplo.Lambdas;
+package ejemplo.lambdas.ejemplos;
 
 @FunctionalInterface
 public interface CalculadoraServicio {

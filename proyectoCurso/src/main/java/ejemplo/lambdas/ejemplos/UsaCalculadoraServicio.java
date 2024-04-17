@@ -1,4 +1,4 @@
-package ejemplo.Lambdas;
+package ejemplo.lambdas.ejemplos;
 
 public class UsaCalculadoraServicio {
     public static void main(String[] args){
