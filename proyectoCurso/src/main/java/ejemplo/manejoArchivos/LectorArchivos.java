@@ -7,12 +7,15 @@ public class LectorArchivos {
         try {
             FileReader fr = new FileReader("datos.txt");
             BufferedReader br = new BufferedReader(fr);
-            String linea="";
+            String linea = "";
 
-            while((linea=br.readLine())!= null){
+            while((linea=br.readLine()) != null){
                 System.out.println(linea);
             }
+
             br.close();
+
+
 
         }catch (FileNotFoundException e){
             System.out.println("El archivo no existe.");
